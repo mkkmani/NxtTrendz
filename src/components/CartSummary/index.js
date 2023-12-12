@@ -1,4 +1,5 @@
 import CartContext from '../../context/CartContext'
+import Payment from '../PaymentCheckout'
 
 import './index.css'
 
@@ -19,13 +20,13 @@ const CartSummary = () => (
               /-
             </h1>
             <p className="total-items">{cartList.length} Items in cart</p>
-            <button type="button" className="checkout-button d-sm-none">
-              Checkout
-            </button>
+            <div className="d-sm-none">
+              <Payment />
+            </div>
           </div>
-          <button type="button" className="checkout-button d-lg-none">
-            Checkout
-          </button>
+          <div className="d-lg-none">
+            <Payment />
+          </div>
         </>
       )
     }}

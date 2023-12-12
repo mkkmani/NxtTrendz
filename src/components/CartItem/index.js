@@ -40,6 +40,7 @@ const CartItem = props => (
                 className="quantity-controller-button"
                 data-testid="minus"
                 onClick={onClickDecrement}
+                aria-label="decrease"
               >
                 <BsDashSquare color="#52606D" size={12} />
               </button>
@@ -48,6 +49,7 @@ const CartItem = props => (
                 type="button"
                 className="quantity-controller-button"
                 data-testid="plus"
+                aria-label="increase"
                 onClick={onClickIncrement}
               >
                 <BsPlusSquare color="#52606D" size={12} />
@@ -58,6 +60,7 @@ const CartItem = props => (
               <button
                 className="remove-button"
                 type="button"
+                aria-label="remove"
                 onClick={onRemoveCartItem}
               >
                 Remove
@@ -68,6 +71,7 @@ const CartItem = props => (
             className="delete-button"
             type="button"
             onClick={onRemoveCartItem}
+            aria-label="remove"
             data-testid="remove"
           >
             <AiFillCloseCircle color="#616E7C" size={20} />

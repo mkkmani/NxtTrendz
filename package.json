@@ -19,6 +19,7 @@
     "react-icons": "4.2.0",
     "react-loader-spinner": "4.0.0",
     "react-router-dom": "5.2.0",
+    "reactjs-popup": "2.0.6",
     "surge": "0.23.0"
   },
   "devDependencies": {
