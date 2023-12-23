@@ -10,27 +10,32 @@ const Payment = () => {
   const [orderStatus, setOrderStatus] = useState(false)
   const cartContext = useContext(CartContext)
 
+  const onClickCancel = close => {
+    setPaymentConfirmed(false)
+    close()
+  }
+
   if (orderStatus) {
     return (
       <Popup modal>
-        <div className="success-message">
-          <h1>Your order has been placed successfully</h1>
+        <div className="order-confirm-div">
+          <h1 className="confirm-h1">
+            Your order has been placed successfully
+          </h1>
           <span>
-            <FaRegCheckCircle className="check-icon" />
+            <FaRegCheckCircle className="confirm-icon" />
           </span>
         </div>
       </Popup>
     )
   }
+
   return (
     <Popup
       modal
       trigger={
-        <div>
-          <button type="button" className="checkout-button d-sm-none">
-            Checkout
-          </button>
-          <button type="button" className="checkout-button d-lg-none">
+        <div className="checkout-btn-container">
+          <button className="confirm-btn checkout-btn" type="button">
             Checkout
           </button>
         </div>
@@ -44,23 +49,22 @@ const Payment = () => {
         })
 
         return (
-          <>
+          <div className="modal-container">
             <div>
-              <h1 className="order-total-value">
-                <span className="order-total-label">Order Total:</span> Rs{' '}
-                {total}/-
+              <h1 className="order-total-h1">
+                <span className="total-span">Order Total:</span> Rs {total}/-
               </h1>
-              <p className="total-items">{cartList.length} Items in cart</p>
-              <div className="payment-options">
-                <div className="payment-option">
+              <p className="items-length">{cartList.length} Items in cart</p>
+              <div>
+                <div className="modal-label-input">
                   <label htmlFor="upi">UPI</label>
                   <input type="radio" name="payment" id="upi" disabled />
                 </div>
-                <div className="payment-option">
+                <div className="modal-label-input">
                   <label htmlFor="cards">Credit/Debit card</label>
                   <input type="radio" name="payment" id="cards" disabled />
                 </div>
-                <div className="payment-option">
+                <div className="modal-label-input">
                   <label htmlFor="internetBanking">Internet banking</label>
                   <input
                     type="radio"
@@ -69,11 +73,11 @@ const Payment = () => {
                     disabled
                   />
                 </div>
-                <div className="payment-option">
+                <div className="modal-label-input">
                   <label htmlFor="wallet">Wallet</label>
                   <input type="radio" name="payment" id="wallet" disabled />
                 </div>
-                <div className="payment-option">
+                <div className="modal-label-input">
                   <label htmlFor="cod">Cash on delivery</label>
                   <input
                     type="radio"
@@ -84,23 +88,18 @@ const Payment = () => {
                 </div>
               </div>
             </div>
-            <div className="popup-buttons-div">
+            <div className="cancel-confirm-btn-container">
               <button
-                className={
-                  paymentConfirmed
-                    ? 'cancel-button checkout-button'
-                    : 'checkout-button'
-                }
                 type="button"
-                onClick={() => close()}
+                className="cancel-btn"
+                onClick={() => onClickCancel(close)}
               >
                 Cancel
               </button>
               <button
+                disabled={!paymentConfirmed}
                 className={
-                  paymentConfirmed
-                    ? 'checkout-button'
-                    : 'checkout-button confirm-disabled'
+                  !paymentConfirmed ? 'confirm-btn disabled-btn' : 'confirm-btn'
                 }
                 type="button"
                 onClick={() => {
@@ -110,7 +109,7 @@ const Payment = () => {
                 Confirm Order
               </button>
             </div>
-          </>
+          </div>
         )
       }}
     </Popup>

@@ -1,44 +1,93 @@
-.popup-buttons-div {
+.modal-container {
+  padding: 30px;
+}
+
+.checkout-btn-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-right: 20px;
 }
 
-.cancel-button {
-  background-color: #c7cbd1 !important;
-  color: white;
-  border: none;
-  outline: none;
-  margin: 10px;
-}
-
-.confirm-disabled {
-  background-color: #c7cbd1 !important;
-}
-
-.payment-options {
-  display: flex;
-  flex-direction: column;
-}
-
-.payment-option {
+.order-confirm-div {
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
-  width: 150px;
-  justify-content: space-between;
-}
-
-.success-message {
-  margin: 30px;
   justify-content: center;
   align-items: center;
-  display: flex;
-  flex-direction: row;
 }
 
-.check-icon {
+.checkout-btn {
+  width: 180px;
+  height: 40px;
+  font-size: 18px !important;
+}
+
+.confirm-h1 {
+  font-size: 24px;
+  color: #616e7c;
+  color: black;
+  margin-right: 16px;
+}
+
+.confirm-icon {
   color: green;
-  height: 50px;
-  width: 50px;
+  height: 24px;
+  width: 24px;
+}
+
+.order-total-h1 {
+  font-size: 24px;
+  color: #000000;
+}
+
+.items-length {
+  color: #616e7c;
+  font-size: 16px;
+  padding: 2px 0px 20px 0px;
+}
+
+.modal-label-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 160px;
+  margin: 6px;
+}
+
+.cancel-confirm-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cancel-btn {
+  font-family: 'Roboto';
+  font-size: 14px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.confirm-btn {
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  color: #ffffff;
+  background-color: #0967d2;
+  border: none;
+  border-radius: 4px;
+  margin-left: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.disabled-btn {
+  background-color: lightskyblue;
+  cursor: default;
 }
