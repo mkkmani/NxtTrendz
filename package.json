@@ -32,9 +32,6 @@
     "prettier": "2.2.1",
     "react-scripts": "4.0.3"
   },
-  "pnpm": {
- "version": "8.7.6"
-},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
