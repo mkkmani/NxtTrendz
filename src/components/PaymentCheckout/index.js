@@ -55,7 +55,7 @@ const Payment = () => {
                 <span className="total-span">Order Total:</span> Rs {total}/-
               </h1>
               <p className="items-length">{cartList.length} Items in cart</p>
-              <div>
+              <div className="payment-options">
                 <div className="modal-label-input">
                   <label htmlFor="upi">UPI</label>
                   <input type="radio" name="payment" id="upi" disabled />

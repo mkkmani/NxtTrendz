@@ -91,3 +91,25 @@
   background-color: lightskyblue;
   cursor: default;
 }
+
+@media screen and (max-width: 567px) {
+  .order-total-h1 {
+    font-size: 18px;
+  }
+
+  .payment-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-label-input {
+    margin: 10px;
+    padding-right: 18px;
+  }
+
+  .cancel-confirm-btn-container {
+    justify-content: center;
+  }
+}

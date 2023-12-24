@@ -20,12 +20,9 @@ const CartSummary = () => (
               /-
             </h1>
             <p className="total-items">{cartList.length} Items in cart</p>
-            <div className="d-sm-none">
+            <div>
               <Payment />
             </div>
-          </div>
-          <div className="d-lg-none">
-            <Payment />
           </div>
         </>
       )
